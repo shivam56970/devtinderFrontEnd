@@ -16,7 +16,7 @@ const Login = () => {
         setPassword(e.target.value);
     }
     const handleLogin = async () => {
-        const data = await axios.post("http://localhost:3000/login", { emailId, password }, { withCredentials: true });
+        const data = await axios.post(BASE_URL + "login", { emailId, password }, { withCredentials: true });
         dispatch(addUser(data.data));
         navigate("/feed");
     }
